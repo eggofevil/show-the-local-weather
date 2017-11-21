@@ -19,6 +19,7 @@
     font-weight: bold;
     font-style: normal;
 }
+
 html {
   text-shadow: 0.05em 0.05em 0.01em #000000; 
   color: #e6e8eb;
@@ -27,6 +28,8 @@ html {
 body {
   font-size: 25px;
   font-family: droid_serif, serif;
+  background-color: #2f353b;
+  text-align: center;
 }
 
 h1, h2 {
@@ -34,15 +37,11 @@ h1, h2 {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 h2 {
-  font-size: 1.5em;
-}
-body {
-  background-color: #2f353b;
-  text-align: center;
+  font-size: 1.2em;
 }
 section img {
   width: 4em;
@@ -54,12 +53,13 @@ section img {
 select {
   display: block;
   margin: 0 auto;
+  border-radius: 5px;
 }
 select, option {
   background-color:  #909ba6;
-  color: #e6e8eb;
-  text-shadow: 0.05em 0.05em 0.01em #000000;
-  font-size: 0.7em;
+  color: #000000;
+  text-shadow: 0.05em 0.05em 0.01em #ffffff;
+  font-size: 0.8em;
 }
 option {
   font-size: 1em;
@@ -76,4 +76,17 @@ option {
   h2 {
     font-size: 1.2em;
   }
+}
+
+footer {
+  margin-top: 4em;
+  width: 100%;
+  font-size: 0.7em;
+  font-style: normal;
+}
+footer a {
+  color: orangered;
+}
+footer a:visited {
+  color: darkorange;
 }

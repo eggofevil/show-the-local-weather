@@ -3,6 +3,7 @@ var tempScale = document.querySelector('#temperatureScale');
 var pressScale = document.querySelector('#pressureScale');
 var url = 'https://fcc-weather-api.glitch.me/api/current?';
 var request = new XMLHttpRequest();
+var response;
 var outerResponse;
 var weatherData = document.querySelector('#weatherData');
 var locationPara = document.createElement('p');
@@ -18,13 +19,17 @@ var options = {
 };
 
 function showWeather(response) {
-  console.log(response);
+  //response = responseObj;
+  /*if (typeof(response) === 'string') {
+    response = JSON.parse(response);
+  }*/
+  //console.log(response);
   outerResponse = response;
   locationPara.textContent = 'Your location is: ' + response.name + ', ' + response.sys.country;
   tempPara.textContent = 'Temperature: ';
   pressPara.textContent = 'Pressure: ';
   if (tempScale.value === 'Celsius') {
-    tempPara.textContent += response.main.temp + ' °C';
+    tempPara.textContent += (response.main.temp).toFixed() + ' °C';
   } else {
     tempPara.textContent += ((response.main.temp * 9) / 5 + 32).toFixed() + ' °F';
   }
@@ -49,7 +54,13 @@ function showWeather(response) {
 function getWeather(url) {
   request.open('GET', url);
   request.responseType = 'json';
-  request.addEventListener('load', function () {showWeather(request.response); });
+  request.addEventListener('load', function () {
+    if (typeof (request.response) === 'string') {
+      showWeather(JSON.parse(request.response));
+    } else {
+      showWeather(request.response);
+    }
+  });
   request.send();
 }
 
