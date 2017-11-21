@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset = "utf-8">
+    <meta name="viewport" content="width=device-width">
     <meta name = "author" content = "A.Gurin">
     <meta name = "description" content = "This page is to show weather in the region where accessing device is located">
     <title>Weather in region</title>
@@ -9,16 +10,21 @@
   </head>
   <body>
     <article>
-      <h1>Weather in region</h1>
+      <h1>Weather in your region</h1>
       <section id="weatherData">
         <h2>Weather data</h2>
       </section>
       <section>
         <h2>Controls</h2>
-        <label for="scale">Choose the scale</label>
-        <select id="scale">
+        <label for="temperatureScale">Choose the scale</label>
+        <select id="temperatureScale">
           <option selected="Celsius">Celsius</option>
           <option value="Fahrenheit">Fahrenheit</option>
+        </select>
+        <label for="pressureScale">Choose the pressure units</label>
+        <select id="pressureScale">
+          <option selected="mm-HG">mm HG</option>
+          <option value="mb">mb</option>
         </select>
       </section>
     </article>
